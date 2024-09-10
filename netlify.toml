@@ -1,7 +1,3 @@
 [build]
 command = "npm install && npm run build && npm run generate"
 publish = "dist"
-
-
-[build.environment]
-NODE_VERSION = "18.x"  # Ensure this matches the Node version you're using locally
