@@ -4,4 +4,4 @@ publish = "dist"
 
 
 [build.environment]
-NODE_VERSION = "16.x"  # Ensure this matches the Node version you're using locally
+NODE_VERSION = "18.x"  # Ensure this matches the Node version you're using locally
