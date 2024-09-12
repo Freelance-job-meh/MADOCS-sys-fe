@@ -2,3 +2,10 @@ node_modules
 .nuxt
 dist
 .env
+nuxt.config.js
+package-lock.json
+.nuxt/router.js
+.nuxt/routes.json
+.nuxt/components/index.js
+.nuxt/components/readme.md
+.nuxt/vetur/tags.json
