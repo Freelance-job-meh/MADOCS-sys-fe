@@ -2,197 +2,197 @@
   {
     "name": "forget-password",
     "path": "/forget-password",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\forget-password.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/forget-password.vue",
     "chunkName": "pages/forget-password",
-    "_name": "_10ba9c12"
+    "_name": "_db320d8a"
   },
   {
     "name": "reset-password",
     "path": "/reset-password",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\reset-password.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/reset-password.vue",
     "chunkName": "pages/reset-password",
-    "_name": "_3ae52c8d"
+    "_name": "_1698ecc9"
   },
   {
     "name": "staff-login",
     "path": "/staff-login",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\staff-login.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/staff-login.vue",
     "chunkName": "pages/staff-login",
-    "_name": "_1112b990"
+    "_name": "_0ce92c7c"
   },
   {
     "name": "verify-email",
     "path": "/verify-email",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\verify-email.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/verify-email.vue",
     "chunkName": "pages/verify-email",
-    "_name": "_317773fc"
+    "_name": "_6b53d990"
   },
   {
     "name": "Modules-change-password",
     "path": "/Modules/change-password",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\change-password.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/change-password.vue",
     "chunkName": "pages/Modules/change-password",
-    "_name": "_ee5cb776"
+    "_name": "_477935b0"
   },
   {
     "name": "Modules-Dashboard-high-level-management",
     "path": "/Modules/Dashboard/high-level-management",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Dashboard\\\\high-level-management.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Dashboard/high-level-management.vue",
     "chunkName": "pages/Modules/Dashboard/high-level-management",
-    "_name": "_2669aea6"
+    "_name": "_769f5d98"
   },
   {
     "name": "Modules-Members-edit-members",
     "path": "/Modules/Members/edit-members",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Members\\\\edit-members.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Members/edit-members.vue",
     "chunkName": "pages/Modules/Members/edit-members",
-    "_name": "_9b889c08"
+    "_name": "_1291bb44"
   },
   {
     "name": "Modules-Members-members-record",
     "path": "/Modules/Members/members-record",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Members\\\\members-record.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Members/members-record.vue",
     "chunkName": "pages/Modules/Members/members-record",
-    "_name": "_64ffd3aa"
+    "_name": "_7078ed73"
   },
   {
     "name": "Modules-Members-new-members",
     "path": "/Modules/Members/new-members",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Members\\\\new-members.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Members/new-members.vue",
     "chunkName": "pages/Modules/Members/new-members",
-    "_name": "_bc212294"
+    "_name": "_94e1c724"
   },
   {
     "name": "Modules-Members-new-request",
     "path": "/Modules/Members/new-request",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Members\\\\new-request.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Members/new-request.vue",
     "chunkName": "pages/Modules/Members/new-request",
-    "_name": "_da1c25a8"
+    "_name": "_b2dcca38"
   },
   {
     "name": "Modules-Setting-access-control",
     "path": "/Modules/Setting/access-control",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Setting\\\\access-control.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Setting/access-control.vue",
     "chunkName": "pages/Modules/Setting/access-control",
-    "_name": "_703e565e"
+    "_name": "_78bdd1cb"
   },
   {
     "name": "Modules-Setting-roles-setting",
     "path": "/Modules/Setting/roles-setting",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Setting\\\\roles-setting.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Setting/roles-setting.vue",
     "chunkName": "pages/Modules/Setting/roles-setting",
-    "_name": "_5b18721a"
+    "_name": "_60337a8e"
   },
   {
     "name": "Modules-Staff-Management-edit-staff",
     "path": "/Modules/Staff-Management/edit-staff",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Staff-Management\\\\edit-staff.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Staff-Management/edit-staff.vue",
     "chunkName": "pages/Modules/Staff-Management/edit-staff",
-    "_name": "_e24f41e0"
+    "_name": "_0e696a58"
   },
   {
     "name": "Modules-Staff-Management-register-staff",
     "path": "/Modules/Staff-Management/register-staff",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Staff-Management\\\\register-staff.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Staff-Management/register-staff.vue",
     "chunkName": "pages/Modules/Staff-Management/register-staff",
-    "_name": "_f384a22e"
+    "_name": "_bce5cea6"
   },
   {
     "name": "Modules-Staff-Management-staff-record",
     "path": "/Modules/Staff-Management/staff-record",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Staff-Management\\\\staff-record.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Staff-Management/staff-record.vue",
     "chunkName": "pages/Modules/Staff-Management/staff-record",
-    "_name": "_d88d835e"
+    "_name": "_4ca04915"
   },
   {
     "name": "Modules-Staff-Management-usermatrix-view",
     "path": "/Modules/Staff-Management/usermatrix-view",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\Modules\\\\Staff-Management\\\\usermatrix-view.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/Modules/Staff-Management/usermatrix-view.vue",
     "chunkName": "pages/Modules/Staff-Management/usermatrix-view",
-    "_name": "_f68af13a"
+    "_name": "_594f53c2"
   },
   {
     "name": "static-js-apexcharts.min",
     "path": "/static/js/apexcharts.min",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\apexcharts.min.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/apexcharts.min.js",
     "chunkName": "pages/static/js/apexcharts.min",
-    "_name": "_5ecb76ee"
+    "_name": "_258fb8c2"
   },
   {
     "name": "static-js-bootstrap.bundle.min",
     "path": "/static/js/bootstrap.bundle.min",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\bootstrap.bundle.min.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/bootstrap.bundle.min.js",
     "chunkName": "pages/static/js/bootstrap.bundle.min",
-    "_name": "_25e8005e"
+    "_name": "_9ba89218"
   },
   {
     "name": "static-js-datatables-simple-demo",
     "path": "/static/js/datatables-simple-demo",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\datatables-simple-demo.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/datatables-simple-demo.js",
     "chunkName": "pages/static/js/datatables-simple-demo",
-    "_name": "_4cc9a338"
+    "_name": "_63cb977a"
   },
   {
     "name": "static-js-dataTables.bootstrap5.min",
     "path": "/static/js/dataTables.bootstrap5.min",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\dataTables.bootstrap5.min.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/dataTables.bootstrap5.min.js",
     "chunkName": "pages/static/js/dataTables.bootstrap5.min",
-    "_name": "_5fbe4ac0"
+    "_name": "_d1597c2c"
   },
   {
     "name": "static-js-fullcalendar",
     "path": "/static/js/fullcalendar",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\fullcalendar.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/fullcalendar.js",
     "chunkName": "pages/static/js/fullcalendar",
-    "_name": "_4e6fdf97"
+    "_name": "_13f2e7a6"
   },
   {
     "name": "static-js-jquery-3.5.1",
     "path": "/static/js/jquery-3.5.1",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\jquery-3.5.1.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/jquery-3.5.1.js",
     "chunkName": "pages/static/js/jquery-3.5.1",
-    "_name": "_b0237394"
+    "_name": "_4f84f2cc"
   },
   {
     "name": "static-js-jquery.dataTables.min",
     "path": "/static/js/jquery.dataTables.min",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\jquery.dataTables.min.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/jquery.dataTables.min.js",
     "chunkName": "pages/static/js/jquery.dataTables.min",
-    "_name": "_7b379647"
+    "_name": "_776ab271"
   },
   {
     "name": "static-js-jquery.richtext",
     "path": "/static/js/jquery.richtext",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\jquery.richtext.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/jquery.richtext.js",
     "chunkName": "pages/static/js/jquery.richtext",
-    "_name": "_b354495e"
+    "_name": "_1d73defb"
   },
   {
     "name": "static-js-jquery.table2excel.min",
     "path": "/static/js/jquery.table2excel.min",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\jquery.table2excel.min.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/jquery.table2excel.min.js",
     "chunkName": "pages/static/js/jquery.table2excel.min",
-    "_name": "_ba917386"
+    "_name": "_2ce7af53"
   },
   {
     "name": "static-js-scripts",
     "path": "/static/js/scripts",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\scripts.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/scripts.js",
     "chunkName": "pages/static/js/scripts",
-    "_name": "_5f4cdc42"
+    "_name": "_249629ec"
   },
   {
     "name": "static-js-select2.min",
     "path": "/static/js/select2.min",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\static\\\\js\\\\select2.min.js",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/static/js/select2.min.js",
     "chunkName": "pages/static/js/select2.min",
-    "_name": "_dd70f920"
+    "_name": "_5f0427cc"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\hazizi.suhaibul\\\\Desktop\\\\MADOCS-sys-fe\\\\pages\\\\index.vue",
+    "component": "/Users/imt-asyraf/Desktop/Source-Code/madocs/Main/MADOCS-sys-fe/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_2d52e464"
+    "_name": "_f6ab4bdc"
   }
 ]

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     base: '/'
   },
   head: {
-    title: "MADOCS",
+    title: process.env.TARGET_APP_NAME || "MADOCS",
     htmlAttrs: {
       lang: "en",
     },
@@ -42,23 +42,31 @@ export default defineNuxtConfig({
       }
     ],
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" },
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: 'stylesheet', href: 'https://pro.fontawesome.com/releases/v5.10.0/css/all.css' },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css' },
-      {
-        rel: "stylesheet",
-        href:
-          "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-      }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://pro.fontawesome.com/releases/v5.10.0/css/all.css' }
     ],
+    // ToDo : Commenting for a while to see how the performance on FE and some libraries need to readjust where to be put
+    // meta: [
+    //   { charset: "utf-8" },
+    //   { name: "viewport", content: "width=device-width, initial-scale=1" },
+    //   { hid: "description", name: "description", content: "" },
+    //   { name: "format-detection", content: "telephone=no" },
+    // ],
+    // link: [
+    //   { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+    //   { rel: 'stylesheet', href: 'https://pro.fontawesome.com/releases/v5.10.0/css/all.css' },
+    //   { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css' },
+    //   {
+    //     rel: "stylesheet",
+    //     href:
+    //       "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    //   }
+    // ],
   },
-
   css: [
     "@/assets/css/dataTables.bootstrap5.min.css",
     "@/assets/css/styles.css",
@@ -67,8 +75,8 @@ export default defineNuxtConfig({
   ],
 
   plugins: [
-    { src: "@/plugins/vue-the-mask.js" },
-    { src: "@/plugins/vue-json-excel.js" },
+    { src: '@/plugins/vue-the-mask.js', mode: process.env.TARGET_MODERN || 'client' },
+    { src: '@/plugins/vue-json-excel.js', mode: process.env.TARGET_MODERN || 'client' },
   ],
 
   components: true,
@@ -88,8 +96,8 @@ export default defineNuxtConfig({
   },
 
   axios: {
-    //baseURL: "http://127.0.0.1:8000/api/"
-    baseURL: "https://madocs-be-dev-704639301453.us-central1.run.app/api/"
+    baseURL: process.env.TARGET_API_BASE_URL || "http://127.0.0.1:8000/api/"
+    // baseURL: "https://madocs-be-dev-704639301453.us-central1.run.app/api/"
   },
 
   build: {
@@ -98,6 +106,9 @@ export default defineNuxtConfig({
       compact: true,
     },
     transpile: ['@fullcalendar'], // Set transpile as an array and include the necessary regex or strings
+    optimization: {
+      minimize: true,
+    },
 
     extend(config) {
       config.resolve.plugins.push(PnpWebpackPlugin);
@@ -106,13 +117,14 @@ export default defineNuxtConfig({
   },
 
   server: {
-    host: "0.0.0.0",
+    host: process.env.TARGET_HOST || "0.0.0.0",
     timing: {
       total: true
     },
   },
 
-  ssr: false,
+  ssr: process.env.TARGET_SSR_DEPLOY || false,
 
-  target: 'static',
+  target: process.env.TARGET_DEPLOY || 'server',
+  modern: process.env.TARGET_MODERN || 'client',  // Use modern build for modern browsers
 })
