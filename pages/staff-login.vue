@@ -3,7 +3,7 @@
     <div class="row login-box">
       <img src="~/assets/images/logo-3.png" />
       <Loader v-if="loader" />
-      <form method="post" @submit.prevent="login">
+      <form @submit.prevent="login">
         <div class="mb-3">
           <label for="inputEmail">Login ID</label>
           <input
@@ -11,50 +11,42 @@
             id="inputEmail"
             v-model="email"
             type="text"
+            :class="{ 'is-invalid': emailerror }"
           />
+          <div v-if="emailerror" class="invalid-feedback">
+            {{ emailerror }}
+          </div>
         </div>
 
         <div class="mb-3 password">
           <label for="inputPassword">Password</label>
-          <a class="small ml-auto forgot-password" href="/forget-password"
-            >Forgot Password?</a
-          >
+          <a class="small ml-auto forgot-password" href="/forget-password">Forgot Password?</a>
           <input
             class="form-control"
             id="inputPassword"
             v-model="password"
             type="password"
+            :class="{ 'is-invalid': passerror }"
           />
+          <div v-if="passerror" class="invalid-feedback">
+            {{ passerror }}
+          </div>
         </div>
-        <Error :message="emailerror" v-if="emailerror" />
-    
+
         <div class="d-flex align-items-center mt-3">
-          <input type="submit" class="btn login-btn" value="Login" />
+          <button type="submit" class="btn login-btn" :disabled="loader">Login</button>
         </div>
       </form>
     </div>
   </div>
 </template>
+
 <script>
-import Error from "~/components/Error";
+import Swal from 'sweetalert2'; // SweetAlert2 for alerts
 import Loader from "../components/loader.vue";
+
 export default {
   components: { Loader },
-  name: "staff-login",
-  head: {
-    script: [
-      {
-        src: "/js/bootstrap.bundle.min.js",
-        body: true,
-        crossorigin: "anonymous",
-      },
-      {
-        src: "/js/scripts.js",
-        body: true,
-        crossorigin: "anonymous",
-      },
-    ],
-  },
   data() {
     return {
       loader: false,
@@ -62,50 +54,105 @@ export default {
       password: "",
       emailerror: null,
       passerror: null,
-      userdetail: null,
     };
   },
   methods: {
+    // Function to validate email format using regex
+    validateEmail(email) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(email);
+    },
+
     async login() {
+      // Reset previous errors
       this.emailerror = null;
       this.passerror = null;
-      try {
-        if (!this.email) {
-          this.emailerror = "Email is Required!";
-        }
-        if (!this.password) {
-          this.passerror = "Password is Required!";
-        }
-        if (this.email && this.password) {
-          this.loader = true;
-          const response = await this.$axios.post("auth/login", {
-            email: this.email,
-            password: this.password,
-            type:""
-          });
-          this.userdetail = response.data;
-          
-          if (this.userdetail.code == 200) {
-            localStorage.setItem(
-              "userdetails",
-              JSON.stringify(this.userdetail)
-            );
-          
-            this.loader = false;
-            this.$router.push(this.userdetail.route_alt);
-          } else {
-            this.loader = false;
-            this.emailerror = this.userdetail.message;
-          }
-        }
-      } catch (e) {
-        console.log("my error", e);
-        console.log("api not working");
-        this.loader = false;
-        this.emailerror = "Email and Password does not match";
+
+      // Client-side validation
+      let valid = true;
+      if (!this.email) {
+        this.emailerror = "Email is required!";
+        valid = false;
+      } else if (!this.validateEmail(this.email)) {
+        this.emailerror = "Invalid email format!";
+        valid = false;
       }
-      console.log("my data", this.userdetail);
+      
+      if (!this.password) {
+        this.passerror = "Password is required!";
+        valid = false;
+      }
+
+      // If validation fails, stop the function here
+      if (!valid) return;
+
+      // Proceed to login only if validation passes
+      try {
+        this.loader = true;
+
+        const response = await this.$axios.post("auth/login", {
+          email: this.email,
+          password: this.password,
+          type: ""
+        });
+
+        const userDetail = response.data;
+        console.log(userDetail);
+        console.log(userDetail.code);
+
+        // Handle successful login
+        if (response.status === 200) {
+          console.log(userDetail);
+          localStorage.setItem("userdetails", JSON.stringify(userDetail));
+          Swal.fire({
+            icon: 'success',
+            title: 'Login Successful',
+            text: 'Redirecting...',
+            timer: 1500,
+            showConfirmButton: false
+          });
+          // Wait for the redirect to complete
+          await this.$router.push(userDetail.route_alt);
+        } else {
+          // Handle error from the server response
+          Swal.fire({
+            icon: 'error',
+            title: 'Login Failed',
+            text: userDetail.message || 'Incorrect email or password',
+          });
+        }
+      } catch (error) {
+        // Check if the error is due to an unauthorized request (401)
+        if (error.response && error.response.status === 401) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Unauthorized',
+            text: 'Incorrect email or password.',
+          });
+        } else {
+          // Handle other errors, e.g., server or network errors
+          Swal.fire({
+            icon: 'error',
+            title: 'Login Failed',
+            text: 'An error occurred. Please try again later.',
+          });
+        }
+      } finally {
+        this.loader = false;
+      }
     },
   },
 };
 </script>
+
+<style scoped>
+/* Styling for invalid input fields */
+.is-invalid {
+  border-color: red;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.875em;
+}
+</style>

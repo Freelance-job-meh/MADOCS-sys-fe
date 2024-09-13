@@ -8,11 +8,11 @@
   "Error": {
     "description": "Auto imported from components/Error.vue"
   },
-  "Loader": {
-    "description": "Auto imported from components/loader.vue"
-  },
   "NetworkStatus": {
     "description": "Auto imported from components/NetworkStatus.vue"
+  },
+  "Loader": {
+    "description": "Auto imported from components/loader.vue"
   },
   "AdminModule1": {
     "description": "Auto imported from components/Admin/Module1.vue"

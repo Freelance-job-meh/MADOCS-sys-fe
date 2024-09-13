@@ -48,37 +48,6 @@ export default {
         crossorigin: "anonymous",
         type: "text/javascript",
       },
-      {
-        src: "/js/scripts.js",
-        body: true,
-        crossorigin: "anonymous",
-        type: "text/javascript",
-      },
-    
-      {
-        src: "/js/jquery.dataTables.min.js",
-        body: true,
-        crossorigin: "anonymous",
-        type: "text/javascript",
-      },
-      {
-        src: "https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js",
-        body: true,
-        crossorigin: "anonymous",
-        type: "text/javascript",
-      },
-      {
-        src: "https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js",
-        body: true,
-        crossorigin: "anonymous",
-        type: "text/javascript",
-      },
-      {
-        src: "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js",
-        async: true,
-        crossorigin: "anonymous",
-        type: "text/javascript",
-      },
     ],
   },
 
@@ -94,7 +63,14 @@ export default {
   beforeMount() {
     this.userdetails = JSON.parse(localStorage.getItem("userdetails"));
     if (!this.userdetails) {
-      this.$router.push("/");
+      this.loader = true;
+      try {
+        this.$router.push("/");
+      } catch (error) {
+        this.handleNavigationError(error);
+      } finally {
+        this.loader = false;
+      }
     } else {
       this.role = this.userdetails.role.role_name;
     }
@@ -176,7 +152,14 @@ export default {
 
     logoutUser: function () {
       localStorage.removeItem('userdetails');
-      this.$router.push("/staff-login");
+      this.loader = true;
+      try {
+        this.$router.push("/staff-login");
+      } catch (error) {
+        this.handleNavigationError(error);
+      } finally {
+        this.loader = false;
+      }
     },
 
     resetTimer: function () {
