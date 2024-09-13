@@ -3,92 +3,98 @@
     <div class="message-box">
       <p>Your account has been verified successfully.</p>
       <div class="d-flex justify-content-center">
-          <a href="/" class="btn btn-success next-btn">Next
-              <i class="fad fa-arrow-to-right"></i>
-          </a>
+        <a href="/" class="btn btn-success next-btn">
+          Next <i class="fad fa-arrow-to-right"></i>
+        </a>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.message-bg {
-    background: #F7F6F1 !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-.message-box {
-    background: #E2DECC;
-    border: 0px;
-    border-radius: 15px;
-    padding: 50px 15px;
-    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 7%);
-    width: 500px;
-    text-align: center;
-    margin: auto;
-}
-</style>
 <script>
-import Error from "~/components/Error";
+import Swal from "sweetalert2";
 import Loader from "../components/loader.vue";
+
 export default {
   components: { Loader },
-  name: "reset-password",
-  head: {
-    script: [
-      {
-        src: "/js/bootstrap.bundle.min.js",
-        body: true,
-        crossorigin: "anonymous",
-      },
-      {
-        src: "/js/scripts.js",
-        body: true,
-        crossorigin: "anonymous",
-      },
-    ],
-  },
+  name: "verify-account",
   data() {
     return {
       loader: false,
       userid: "",
-      password: "",
-      Cnfpassword: "",
-      emailerror: null,
-      validate: false,
     };
   },
   beforeMount() {
-    let urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(window.location.search);
     this.userid = urlParams.get("uky");
-    this.OnSubmit();
+    if (this.userid) {
+      this.OnSubmit();
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No user ID found.",
+      });
+    }
   },
   methods: {
     async OnSubmit() {
-
-      this.emailerror = null;
-      this.validate = true;
       try {
-        if (this.userid && this.validate) {
-          this.loader = true;
-          const response = await this.$axios.post("reset/verifyAccount", {
-            userid: this.userid,
-          });
-          if (response.data.code == 200) {
+        this.loader = true;
+        const response = await this.$axios.post("reset/verifyAccount", {
+          userid: this.userid,
+        });
 
-            this.loader = false;
-          } else {
-            window.alert(response.data.message);
-            this.loader = false;
-          }
+        // Handle successful verification
+        if (response.status === 200) {
+          Swal.fire({
+            icon: "success",
+            title: "Account Verified",
+            text: "Your account has been verified successfully.",
+            timer: 2000,
+            showConfirmButton: false,
+          }).then(() => {
+            this.$router.push("/staff-login");
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Verification Failed",
+            text: response.data.message,
+          });
         }
-      } catch (e) {
-        console.log("api not working", e);
+      } catch (error) {
+        console.error("API error:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Unable to verify account. Please try again later.",
+        });
+      } finally {
         this.loader = false;
       }
     },
   },
 };
 </script>
+
+<style scoped>
+.message-bg {
+  background: #f7f6f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.message-box {
+  background: #e2decc;
+  border: 0px;
+  border-radius: 15px;
+  padding: 50px 15px;
+  box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 7%);
+  width: 500px;
+  text-align: center;
+  margin: auto;
+}
+</style>
