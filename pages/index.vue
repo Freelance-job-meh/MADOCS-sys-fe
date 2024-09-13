@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import loginHome from './staff-login.vue';
 export default {
   head() {
       return {
@@ -21,7 +20,10 @@ export default {
         ]
       }
     },
-  components: { loginHome },
+  // Lazy load the loginHome component
+  components: {
+    loginHome: () => import('./staff-login.vue')
+  },
   name: "IndexPage",
 };
 </script>
